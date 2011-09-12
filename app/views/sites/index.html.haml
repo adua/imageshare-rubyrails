@@ -1,0 +1,21 @@
+%h1
+  Listing sites
+
+%table
+  %tr
+    %th Name
+    %th Fullname
+    %th
+    %th
+    %th
+
+  -@sites.each do |site|
+    %tr
+      %td= site.name 
+      %td= site.fullName
+      %td= link_to 'Show', root_url(:host => with_subdomain(site.name))
+      %td= link_to 'Edit', edit_site_path(site)
+      %td= link_to 'Destroy', site, confirm: 'Are you sure?', method: :delete
+
+
+=link_to 'New Site', new_site_path 

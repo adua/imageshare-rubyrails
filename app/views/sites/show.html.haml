@@ -1,0 +1,21 @@
+%h1
+  =@site.fullName
+%p
+  %b
+    Name
+  =@site.name 
+
+%b 
+  =link_to "Users", users_path
+  -@users.each do |user|
+    =link_to user.name, user
+%p
+  Uploads
+  =@uploads.count
+
+
+=link_to 'Edit', edit_site_path(@site) |
+=link_to 'Back', '/'
+
+
+
