@@ -1,12 +1,10 @@
 class UploadsController < ApplicationController
   # GET /uploads
-  # GET /uploads.json
   def index
     @uploads = @current_site.uploads
   end
 
   # GET /uploads/1
-  # GET /uploads/1.json
   def show
     @upload = Upload.find(params[:id])
   end
